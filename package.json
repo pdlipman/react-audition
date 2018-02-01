@@ -1,0 +1,20 @@
+{
+  "name": "fpinterview",
+  "version": "1.0.0",
+  "description": "Interview for Front Porch React.js candidates",
+  "author": "",
+  "license": "UNLICENSED",
+  "main": "server.js",
+  "scripts": {
+    "client": "cd client && yarn start",
+    "server": "nodemon server.js",
+    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
+  },
+  "dependencies": {
+    "express": "^4.16.2"
+  },
+  "devDependencies": {
+    "concurrently": "^3.5.1",
+    "nodemon": "^1.14.11"
+  }
+}

@@ -15,7 +15,7 @@ const comparator = (column, isAscending) =>
     const comparison = isAscending ? 1 : -1;
 
     if (typeof first === 'string' & typeof second === 'string') {
-      return first.toString().localeCompare(second) * comparison;
+      return first.localeCompare(second) * comparison;
     }
 
     return (second - first) * comparison;

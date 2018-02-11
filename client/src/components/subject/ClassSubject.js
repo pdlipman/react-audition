@@ -13,6 +13,9 @@ import {
   getSortedStudents,
 } from './classSubjectSelectors';
 
+import { translator } from '../../configs/stringUtils';
+import HeaderItem from './HeaderItem';
+
 const mapStateToProps = (state, props) => ({
   students: getSortedStudents(state, props),
 });
@@ -28,14 +31,24 @@ class ClassSubject extends Component {
     students: ImmutablePropTypes.seq,
   };
 
-  handleClick = () => {
+  renderHeader() {
     const {
       id,
-      setSort,
+      students,
     } = this.props;
 
-    setSort(id, 'name', true);
-  };
+    const keys = students.first().keySeq().toArray();
+    return keys.map((key) => {
+      return (
+        <HeaderItem
+          id={ id }
+          key={ key }
+          itemKey={ key }
+          label={ translator(key) }
+        />
+      );
+    });
+  }
 
   renderStudents() {
     const {
@@ -55,11 +68,10 @@ class ClassSubject extends Component {
     const { label } = this.props;
     return (
       <div>
-        <p
-          onClick={ this.handleClick }
-        >
+        <p>
           { `Subject Label: ${label}` }
         </p>
+        { this.renderHeader() }
         { this.renderStudents() }
       </div>
     );

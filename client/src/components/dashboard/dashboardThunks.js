@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { Map } from 'immutable';
+import Immutable from 'immutable';
 
 import * as dashboardActions from './dashboardActions';
 
@@ -29,25 +29,32 @@ function roundAverage(number, length) {
 }
 
 function classesFromStudentsParser(students) {
-  let classMap = new Map();
+  let classMap = new Immutable.Map();
   students.forEach((student) => {
     student.classes.forEach((cls) => {
-      const sum = sumGrades(cls.tests);
-      const averageGrade = roundAverage(sum, cls.tests.length);
-
-      console.log('avg: ' + averageGrade);
-      if (classMap.has(cls.name)) {
-        const studentsInClass = classMap.getIn([cls.name, 'students']);
+      const className = cls.name;
+      const tests = cls.tests;
+      const sum = sumGrades(tests);
+      const averageGrade = roundAverage(sum, tests.length);
+      if (classMap.has(className)) {
+        const studentsInClass = classMap.getIn([className, 'students']);
         studentsInClass.push({ name: student.name, grade: averageGrade });
-        classMap = classMap.setIn([cls.name, 'students'], studentsInClass);
+        classMap = classMap.setIn([className, 'students'], studentsInClass);
+        // classMap = classMap.updateIn([className, 'students'], list => list.push({ name: student.name, grade: averageGrade }));
       } else {
-        classMap = classMap.setIn([cls.name, 'students'], [{ name: student.name, grade: averageGrade }]);
+        classMap = classMap
+          .setIn([className, 'label'], className)
+          .setIn([className, 'id'], className)
+          .setIn([className, 'sort'], Immutable.fromJS({column: 'grade', isAscending: false}))
+          .setIn([className, 'students'], [{ name: student.name, grade: averageGrade }]);
       }
     });
   });
 
-  console.log(classMap);
-  return classMap;
+  return classMap.map((cls) => {
+    const studentsInClass = cls.get('students');
+    return cls.set('students', Immutable.fromJS(studentsInClass));
+  });
 }
 
 function apiError(dispatch, error) {

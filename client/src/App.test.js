@@ -1,11 +1,20 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import Immutable from 'immutable';
+import thunk from 'redux-thunk';
+import configureStore from 'redux-mock-store';
+import { shallow } from 'enzyme';
 import App from './App';
 
-// what a lovely place for some tests...
+const middlewares = [thunk];
+const mockStore = configureStore(middlewares);
+const testState = Immutable.fromJS({});
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
+describe('App', () => {
+  test('App should render properly', () => {
+    const store = mockStore(testState);
+    const wrapper = shallow(
+      <App store={ store }/>
+    );
+    expect(wrapper).toMatchSnapshot();
+  });
 });

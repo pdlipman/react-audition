@@ -6,8 +6,22 @@ import {
   SET_SORT_DETAILS,
 } from './dashboardActions';
 
+import { translator } from '../../utils/stringUtils';
+
 const initialState = Immutable.fromJS({
   message: 'Hello World',
+  columns: Immutable.fromJS([
+    {
+      key: 'name',
+      label: translator('name'),
+      className: 'LeftItem',
+    },
+    {
+      key: 'grade',
+      label: translator('grade'),
+      className: 'RightItem',
+    },
+  ]),
 });
 
 export default function (state = initialState, action) {

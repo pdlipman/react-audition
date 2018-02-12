@@ -1,9 +1,10 @@
 .App {
   text-align: center;
+  color: rgb(33, 150, 243);
 }
 
 .App-header {
-  background-color: #222;
+  background-color: rgb(33, 150, 243);
   padding: 20px;
   color: white;
 }
@@ -19,4 +20,32 @@
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+.LeftItem {
+  text-align: left;
+}
+
+.RightItem {
+  text-align: right;
+}
+
+.DownArrow {
+  margin-top: 5px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.DownArrowOverlay {
+  margin-left: -24px;
+}
+
+.UpArrow {
+  margin-bottom: 5px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.Expansion {
+  border: 1px solid rgb(33, 150, 243);
 }

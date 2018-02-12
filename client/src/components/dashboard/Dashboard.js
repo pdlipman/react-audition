@@ -6,30 +6,27 @@ import ImmutablePropTypes from 'react-immutable-proptypes';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-import ClassSubject from '../subject/ClassSubject';
+import ClassSubject from './ClassSubject';
 
 import {
-  apiTest,
   getStudentData,
 } from './dashboardThunks';
 
 const mapStateToProps = state => ({
-  message: state.getIn(['dashboard', 'message']),
   error: state.getIn(['dashboard', 'error']),
   classes: state.getIn(['dashboard', 'classes']),
 });
 
 const mapDispatchToProps = dispatch => ({
-  testAPI: bindActionCreators(apiTest, dispatch),
   getStudents: bindActionCreators(getStudentData, dispatch),
 });
 
-class Dashboard extends Component {
+export class Dashboard extends Component {
   static propTypes = {
     classes: ImmutablePropTypes.map,
     message: PropTypes.string,
     error: PropTypes.string,
-    testApi: PropTypes.func,
+    getStudents: PropTypes.func,
   };
 
   static defaultProps = {
@@ -38,11 +35,9 @@ class Dashboard extends Component {
 
   componentWillMount() {
     const {
-      testAPI,
       getStudents,
     } = this.props;
 
-    testAPI();
     getStudents();
   }
 
@@ -50,7 +45,7 @@ class Dashboard extends Component {
     const {
       classes,
     } = this.props;
-    return classes.map((classSubject, i) => {
+    return classes.map((classSubject) => {
       return (
         <ClassSubject
           key={ classSubject.get('id') }
@@ -62,10 +57,8 @@ class Dashboard extends Component {
   }
 
   render() {
-    const { message } = this.props;
     return (
       <div>
-        Dashboard: { message }
         { this.renderClasses() }
       </div>
     );

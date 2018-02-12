@@ -38,15 +38,15 @@ function classesFromStudentsParser(students) {
       const averageGrade = roundAverage(sum, tests.length);
       if (classMap.has(className)) {
         const studentsInClass = classMap.getIn([className, 'students']);
-        studentsInClass.push({ name: student.name, grade: averageGrade });
+        studentsInClass.push({ name: student.name, grade: `${averageGrade}%` });
         classMap = classMap.setIn([className, 'students'], studentsInClass);
         // classMap = classMap.updateIn([className, 'students'], list => list.push({ name: student.name, grade: averageGrade }));
       } else {
         classMap = classMap
           .setIn([className, 'label'], className)
           .setIn([className, 'id'], className)
-          .setIn([className, 'sort'], Immutable.fromJS({column: 'grade', isAscending: false}))
-          .setIn([className, 'students'], [{ name: student.name, grade: averageGrade }]);
+          .setIn([className, 'sort'], Immutable.fromJS({column: 'name', isAscending: true}))
+          .setIn([className, 'students'], [{ name: student.name, grade: `${averageGrade}%` }]);
       }
     });
   });

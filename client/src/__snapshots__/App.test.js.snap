@@ -42,14 +42,7 @@ ShallowWrapper {
         </header>
         <p
                 className="App-intro"
-        >
-                Some boilerplate code has been provided; please build upon it (or replace it) to create your solution.
-        </p>
-        <p
-                className="App-intro"
-        >
-                Good luck!
-        </p>
+        />
         <Connect(Dashboard) />
 </div>,
       "store": Object {
@@ -78,14 +71,7 @@ ShallowWrapper {
 </header>,
           <p
             className="App-intro"
->
-            Some boilerplate code has been provided; please build upon it (or replace it) to create your solution.
-</p>,
-          <p
-            className="App-intro"
->
-            Good luck!
-</p>,
+/>,
           <Connect(Dashboard) />,
         ],
         "className": "App",
@@ -124,23 +110,10 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "Some boilerplate code has been provided; please build upon it (or replace it) to create your solution.",
             "className": "App-intro",
           },
           "ref": null,
-          "rendered": "Some boilerplate code has been provided; please build upon it (or replace it) to create your solution.",
-          "type": "p",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "Good luck!",
-            "className": "App-intro",
-          },
-          "ref": null,
-          "rendered": "Good luck!",
+          "rendered": null,
           "type": "p",
         },
         Object {
@@ -177,14 +150,7 @@ ShallowWrapper {
           </header>
           <p
                     className="App-intro"
-          >
-                    Some boilerplate code has been provided; please build upon it (or replace it) to create your solution.
-          </p>
-          <p
-                    className="App-intro"
-          >
-                    Good luck!
-          </p>
+          />
           <Connect(Dashboard) />
 </div>,
         "store": Object {
@@ -213,14 +179,7 @@ ShallowWrapper {
 </header>,
             <p
               className="App-intro"
->
-              Some boilerplate code has been provided; please build upon it (or replace it) to create your solution.
-</p>,
-            <p
-              className="App-intro"
->
-              Good luck!
-</p>,
+/>,
             <Connect(Dashboard) />,
           ],
           "className": "App",
@@ -259,23 +218,10 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "Some boilerplate code has been provided; please build upon it (or replace it) to create your solution.",
               "className": "App-intro",
             },
             "ref": null,
-            "rendered": "Some boilerplate code has been provided; please build upon it (or replace it) to create your solution.",
-            "type": "p",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "Good luck!",
-              "className": "App-intro",
-            },
-            "ref": null,
-            "rendered": "Good luck!",
+            "rendered": null,
             "type": "p",
           },
           Object {

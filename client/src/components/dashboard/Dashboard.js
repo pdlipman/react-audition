@@ -6,6 +6,7 @@ import ImmutablePropTypes from 'react-immutable-proptypes';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
+import TextField from 'material-ui/TextField';
 import ClassSubject from './ClassSubject';
 
 import {
@@ -23,14 +24,14 @@ const mapDispatchToProps = dispatch => ({
 
 export class Dashboard extends Component {
   static propTypes = {
-    classes: ImmutablePropTypes.map,
-    message: PropTypes.string,
+    classes: ImmutablePropTypes.map.isRequired,
     error: PropTypes.string,
-    getStudents: PropTypes.func,
+    getStudents: PropTypes.func.isRequired,
   };
 
   static defaultProps = {
     classes: Map(),
+    error: '',
   };
 
   componentWillMount() {
@@ -56,9 +57,25 @@ export class Dashboard extends Component {
     }).toArray();
   }
 
+  renderError() {
+    const {
+      error,
+    } = this.props;
+    return error && (
+      <TextField
+        error
+        id='error'
+        label='Error'
+        defaultValue={ error }
+        margin='normal'
+      />
+    );
+  }
+
   render() {
     return (
       <div>
+        { this.renderError() }
         { this.renderClasses() }
       </div>
     );

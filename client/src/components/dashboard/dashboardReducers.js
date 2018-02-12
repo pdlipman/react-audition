@@ -9,7 +9,6 @@ import {
 import { translator } from '../../utils/stringUtils';
 
 const initialState = Immutable.fromJS({
-  message: 'Hello World',
   columns: Immutable.fromJS([
     {
       key: 'name',

@@ -21,4 +21,15 @@ describe('Dashboard', () => {
     );
     expect(wrapper).toMatchSnapshot();
   });
+
+  test('Dashboard should render with error properly', () => {
+    const wrapper = shallow(
+      <Dashboard
+        classes={ classes }
+        error={ 'Test Error Message'}
+        getStudents={ () => {} }
+      />
+    );
+    expect(wrapper).toMatchSnapshot();
+  });
 });

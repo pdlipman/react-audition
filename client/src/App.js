@@ -31,9 +31,7 @@ class App extends Component {
             <h1 className="App-title">Front Porch Interview Project</h1>
           </header>
           <p className="App-intro">
-            Some boilerplate code has been provided; please build upon it (or replace it) to create your solution.
           </p>
-          <p className="App-intro">Good luck!</p>
           <Dashboard />
         </div>
       </Provider>

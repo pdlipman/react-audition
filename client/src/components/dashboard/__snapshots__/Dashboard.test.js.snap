@@ -13,6 +13,7 @@ ShallowWrapper {
             },
         }
     }
+    error=""
     getStudents={[Function]}
 />,
   Symbol(enzyme.__renderer__): Object {
@@ -28,14 +29,18 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <Connect(ClassSubject)
-          id="Math"
-          label="Math"
+        "",
+        Array [
+          <Connect(ClassSubject)
+            id="Math"
+            label="Math"
 />,
+        ],
       ],
     },
     "ref": null,
     "rendered": Array [
+      "",
       Object {
         "instance": null,
         "key": "Math",
@@ -58,14 +63,167 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
+          "",
+          Array [
+            <Connect(ClassSubject)
+              id="Math"
+              label="Math"
+/>,
+          ],
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        "",
+        Object {
+          "instance": null,
+          "key": "Math",
+          "nodeType": "class",
+          "props": Object {
+            "id": "Math",
+            "label": "Math",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`Dashboard Dashboard should render with error properly 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Dashboard
+    classes={
+        Immutable.Map {
+            Math: Immutable.Map {
+                label: "Math",
+                id: "Math",
+            },
+        }
+    }
+    error="Test Error Message"
+    getStudents={[Function]}
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <TextField
+          defaultValue="Test Error Message"
+          error={true}
+          id="error"
+          label="Error"
+          margin="normal"
+          required={false}
+          select={false}
+/>,
+        Array [
           <Connect(ClassSubject)
             id="Math"
             label="Math"
 />,
         ],
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "defaultValue": "Test Error Message",
+          "error": true,
+          "id": "error",
+          "label": "Error",
+          "margin": "normal",
+          "required": false,
+          "select": false,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": "Math",
+        "nodeType": "class",
+        "props": Object {
+          "id": "Math",
+          "label": "Math",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <TextField
+            defaultValue="Test Error Message"
+            error={true}
+            id="error"
+            label="Error"
+            margin="normal"
+            required={false}
+            select={false}
+/>,
+          Array [
+            <Connect(ClassSubject)
+              id="Math"
+              label="Math"
+/>,
+          ],
+        ],
       },
       "ref": null,
       "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "defaultValue": "Test Error Message",
+            "error": true,
+            "id": "error",
+            "label": "Error",
+            "margin": "normal",
+            "required": false,
+            "select": false,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
         Object {
           "instance": null,
           "key": "Math",
